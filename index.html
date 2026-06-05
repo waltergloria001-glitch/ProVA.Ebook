@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>From Zero to VA — ProVA Support Network</title>
+<meta name="description" content="A Nigerian's Complete Guide to Building a Virtual Assistance Career and Earning Online. By Gloria Chinanu Chinwi."/>
+<meta property="og:title" content="From Zero to VA — ProVA Support Network"/>
+<meta property="og:description" content="Build a thriving VA career from scratch. For Nigerians ready to earn online."/>
+<meta property="og:type" content="website"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Montserrat:wght@300;400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0f0f0f;
+    --card: #141414;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-dim: #7a6530;
+    --white: #f5f0e8;
+    --muted: #9a8870;
+    --line: rgba(201,168,76,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .nav-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+    background: radial-gradient(ellipse at 30% 50%, #1a1204 0%, #080808 65%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,0.03) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,0.03) 80px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.35s forwards;
+  }
+  .hero-title em { color: var(--gold); font-style: italic; }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    color: var(--muted);
+    margin: 20px 0 36px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.65s forwards;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #a07828);
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(201,168,76,0.08); }
+
+  /* BOOK MOCKUP */
+  .book-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+  }
+  .book {
+    width: 260px;
+    height: 360px;
+    position: relative;
+    transform: perspective(800px) rotateY(-12deg) rotateX(3deg);
+    filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.7)) drop-shadow(0 0 60px rgba(201,168,76,0.12));
+    transition: transform 0.4s;
+  }
+  .book:hover { transform: perspective(800px) rotateY(-6deg) rotateX(2deg); }
+  .book-cover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(150deg, #1c1506 0%, #0f0c03 100%);
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px; right: 12px; bottom: 12px;
+    border: 1px solid rgba(201,168,76,0.25);
+    pointer-events: none;
+  }
+  .book-cover::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.15), transparent);
+  }
+  .book-badge-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .book-ornament { color: var(--gold); font-size: 14px; letter-spacing: 6px; margin-bottom: 12px; opacity: 0.6; }
+  .book-cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .book-cover-title em { color: var(--gold); font-style: italic; }
+  .book-rule { width: 40px; height: 1px; background: var(--gold); margin: 12px auto; }
+  .book-cover-sub {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+  .book-cover-author {
+    position: absolute;
+    bottom: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--gold-dim);
+  }
+
+  /* STATS BAR */
+  .stats {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .stat {
+    padding: 40px 32px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+  }
+  .stat:last-child { border: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* WHAT'S INSIDE */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+  .section-title em { color: var(--gold); font-style: italic; }
+  .section-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 60px;
+  }
+
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+  .chapter-card {
+    background: var(--card);
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .chapter-card:hover { background: #1a1a1a; }
+  .ch-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 28px;
+    padding-top: 3px;
+  }
+  .ch-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .ch-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* TESTIMONIAL / PULLQUOTE */
+  .pullquote-section {
+    background: linear-gradient(135deg, #120f03, #0a0a0a);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 42px);
+    font-style: italic;
+    color: var(--gold-light);
+    max-width: 800px;
+    margin: 0 auto 24px;
+    line-height: 1.4;
+  }
+  .quote-attr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  /* AUTHOR SECTION */
+  .author-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .author-avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #1c1506, #0f0c03);
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .author-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .author-title-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .author-bio {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* PRICING CTA */
+  .pricing-section {
+    background: radial-gradient(ellipse at 50% 0%, #1e1609 0%, #0a0a0a 65%);
+    padding: 100px 40px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .price-box {
+    display: inline-block;
+    background: var(--card);
+    border: 1px solid var(--gold-dim);
+    padding: 60px 80px;
+    max-width: 560px;
+    width: 100%;
+  }
+  .price-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .price-currency {
+    font-size: 28px;
+    color: var(--gold);
+    vertical-align: super;
+    font-style: italic;
+  }
+  .price-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    letter-spacing: 1px;
+  }
+  .price-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .price-features li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .price-features li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 8px;
+    flex-shrink: 0;
+  }
+  .btn-buy {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #a07828);
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px;
+    text-align: center;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .btn-buy:hover { opacity: 0.9; transform: translateY(-1px); }
+  .guarantee {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: var(--gold-dim);
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px;
+    text-align: center;
+  }
+  footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+    .hero-actions { justify-content: center; }
+    .book-wrap { order: -1; }
+    .book { width: 200px; height: 280px; transform: perspective(600px) rotateY(-8deg); }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid var(--line); }
+    .chapters-grid { grid-template-columns: 1fr; }
+    .author-section { grid-template-columns: 1fr; gap: 40px; }
+    .author-avatar { max-width: 160px; }
+    .price-box { padding: 40px 28px; }
+    .section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">ProVA Support Network</div>
+  <a href="#buy" class="nav-cta">Get the Ebook</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">New Release — 2025 Edition</div>
+      <h1 class="hero-title">From <em>Zero</em><br/>to VA</h1>
+      <p class="hero-subtitle">A Nigerian's Complete Guide to Building a Virtual Assistance Career &amp; Earning Online — from scratch, on your terms.</p>
+      <div class="hero-actions">
+        <a href="#buy" class="btn-primary">Get Your Copy</a>
+        <a href="#chapters" class="btn-secondary">See What's Inside</a>
+      </div>
+    </div>
+    <div class="book-wrap">
+      <div class="book">
+        <div class="book-cover">
+          <div class="book-badge-text">ProVA Support Network</div>
+          <div class="book-ornament">✦ ✦ ✦</div>
+          <div class="book-cover-title">From <em>Zero</em><br/>to VA</div>
+          <div class="book-rule"></div>
+          <div class="book-cover-sub">A Nigerian's Guide<br/>to Virtual Assistance</div>
+          <div class="book-cover-author">Gloria Chinanu Chinwi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">8</div>
+    <div class="stat-label">In-Depth Chapters</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">30</div>
+    <div class="stat-label">Day Action Plan</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">15+</div>
+    <div class="stat-label">Tools Covered</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">₦0</div>
+    <div class="stat-label">To Start Your VA Journey</div>
+  </div>
+</div>
+
+<!-- CHAPTERS -->
+<section id="chapters" class="section">
+  <div class="section-label">Inside the Ebook</div>
+  <h2 class="section-title">Everything You Need to <em>Launch &amp; Grow</em></h2>
+  <div class="section-rule"></div>
+  <div class="chapters-grid">
+    <div class="chapter-card">
+      <div class="ch-num">01</div>
+      <div>
+        <div class="ch-title">What Is a Virtual Assistant?</div>
+        <div class="ch-desc">Understand the role, the reality, and the unlimited potential of remote VA work.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">02</div>
+      <div>
+        <div class="ch-title">Why Nigeria Is Perfectly Positioned</div>
+        <div class="ch-desc">Discover the unique advantages Nigerian VAs hold in the global remote work market.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">03</div>
+      <div>
+        <div class="ch-title">Core Skills Every VA Needs</div>
+        <div class="ch-desc">Foundation skills and high-demand specializations — know what to learn first.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">04</div>
+      <div>
+        <div class="ch-title">Tools of the Trade</div>
+        <div class="ch-desc">Every tool, app, and platform you need — most of them completely free to start.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">05</div>
+      <div>
+        <div class="ch-title">How to Find Your First Client</div>
+        <div class="ch-desc">Practical, proven platforms and outreach strategies to land paid work fast.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">06</div>
+      <div>
+        <div class="ch-title">Setting Your Rates &amp; Getting Paid</div>
+        <div class="ch-desc">Naira and dollar benchmarks, payment platforms that work in Nigeria, and contracts.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">07</div>
+      <div>
+        <div class="ch-title">Building Your Personal Brand</div>
+        <div class="ch-desc">LinkedIn strategy, content pillars, and how to make clients come to you.</div>
+      </div>
+    </div>
+    <div class="chapter-card">
+      <div class="ch-num">08</div>
+      <div>
+        <div class="ch-title">Your 30-Day Action Plan</div>
+        <div class="ch-desc">A week-by-week blueprint to go from zero to your first paying client.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULLQUOTE -->
+<div class="pullquote-section">
+  <div class="big-quote">"Your location is not your limitation. Your internet connection is your passport."</div>
+  <div class="quote-attr">— From Zero to VA, Chapter 2</div>
+</div>
+
+<!-- AUTHOR -->
+<section class="author-section">
+  <div class="author-avatar">G</div>
+  <div>
+    <div class="section-label">About the Author</div>
+    <div class="author-name">Gloria Chinanu Chinwi</div>
+    <div class="author-title-tag">Virtual Assistant · Social Media Marketer · Founder, ProVA Support Network</div>
+    <p class="author-bio">Gloria is a virtual assistant and social media marketing professional with hands-on experience across multiple organizations. Through ProVA Support Network, she is on a mission to equip Nigerians with the skills, tools, and confidence to build thriving remote careers — without leaving home.</p>
+  </div>
+</section>
+
+<!-- PRICING / BUY -->
+<section id="buy" class="pricing-section">
+  <div class="section-label" style="margin-bottom:16px;">Get Your Copy Today</div>
+  <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,48px); margin-bottom:48px;">One Book. <em style="color:var(--gold);font-style:italic;">Career-Changing</em> Knowledge.</h2>
+  <div class="price-box">
+    <div class="price-tag">From Zero to VA — Full Ebook</div>
+    <div class="price-amount"><span class="price-currency">₦</span>2,500</div>
+    <div class="price-note">One-time payment · Instant download</div>
+    <ul class="price-features">
+      <li>8 full chapters of actionable guidance</li>
+      <li>30-Day VA Launch Action Plan</li>
+      <li>Tools guide &amp; resource list</li>
+      <li>Nigerian-specific rates &amp; payment platforms</li>
+      <li>LinkedIn &amp; personal branding strategy</li>
+      <li>Lifetime access — yours to keep forever</li>
+    </ul>
+    <a href="https://selar.co/provasupportnetwork" class="btn-buy" target="_blank" rel="noopener">Buy on Selar — ₦2,500</a>
+    <div class="guarantee">✦ &nbsp; Secure payment via Selar &nbsp; · &nbsp; Instant PDF delivery</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 ProVA Support Network &nbsp;·&nbsp; Gloria Chinanu Chinwi &nbsp;·&nbsp; All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
