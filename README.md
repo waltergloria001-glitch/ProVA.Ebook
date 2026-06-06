@@ -1,2 +1,6 @@
-# ProVA.Ebook
-ProVA Support Network Ebook Landing Page 
+[build]
+  publish = "."
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
