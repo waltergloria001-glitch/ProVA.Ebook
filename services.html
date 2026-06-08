@@ -38,7 +38,8 @@
     background: rgba(8,8,8,0.95); backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
   }
-  .nav-brand { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+  .nav-logo { height: 40px; width: auto; }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
@@ -236,7 +237,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">ProVA Support Network</div>
+  <div class="nav-brand">
+    <img src="https://waltergloria001-glitch.github.io/ProVA.Ebook/logo.jpg" alt="ProVA Support Network" class="nav-logo"/>
+    ProVA Support Network
+  </div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
@@ -248,7 +252,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">Professional Virtual Assistance Services</div>
+    <div class="hero-badge" style="display:flex;align-items:center;gap:12px;border:none;padding:0;margin-bottom:40px;">
+      <img src="https://waltergloria001-glitch.github.io/ProVA.Ebook/logo.jpg" style="height:60px;width:auto;" alt="ProVA Support Network"/>
+    </div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:8px 20px;margin-bottom:40px;display:inline-block;">Professional Virtual Assistance Services</div>
     <h1 class="hero-title">We Handle <em>Your Tasks.</em><br/>You Drive <em>Your Growth.</em></h1>
     <div class="hero-divider"></div>
     <p class="hero-sub">ProVA Support Network provides world-class virtual assistance, social media management, and digital product creation services — so you can focus on what matters most.</p>
@@ -723,7 +730,7 @@
     <p class="cta-sub">Book a free 30-minute consultation and let's discuss exactly how ProVA Support Network can help your business grow.</p>
     <div class="cta-buttons">
       <a href="mailto:provasupportnetwork@gmail.com" class="btn-primary">Book Free Consultation</a>
-      <a href="https://wa.me/2349000000000" class="btn-secondary">WhatsApp Us</a>
+      <a href="https://wa.me/2348065408000" class="btn-secondary">WhatsApp Us</a>
     </div>
     <div class="cta-contact-grid">
       <a href="mailto:provasupportnetwork@gmail.com" class="contact-card">
@@ -731,10 +738,10 @@
         <div class="contact-label">Email</div>
         <div class="contact-value">provasupportnetwork@gmail.com</div>
       </a>
-      <a href="https://wa.me/2349000000000" class="contact-card">
+      <a href="https://wa.me/2348065408000" class="contact-card">
         <div class="contact-icon">💬</div>
         <div class="contact-label">WhatsApp</div>
-        <div class="contact-value">Send us a message</div>
+        <div class="contact-value">08065408000</div>
       </a>
       <a href="https://linkedin.com/in/gloria-chinwi" class="contact-card">
         <div class="contact-icon">💼</div>
@@ -747,7 +754,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">© 2025 ProVA Support Network · Gloria Chinanu Chinwi</div>
+  <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
+    <img src="https://waltergloria001-glitch.github.io/ProVA.Ebook/logo.jpg" style="height:36px;width:auto;" alt="ProVA"/>
+    © 2025 ProVA Support Network · Gloria Chinanu Chinwi
+  </div>
   <div class="footer-tagline">Supporting Brands · Streamlining Tasks · Driving Growth</div>
   <div class="footer-links">
     <a href="https://waltergloria001-glitch.github.io/ProVA.Ebook">Ebook</a>
