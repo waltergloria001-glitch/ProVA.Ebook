@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services — ProVA Support Network</title>
+<meta name="description" content="Professional Virtual Assistance, Social Media Management, Digital Content Creation, Ebook Creation and Digital Store Setup services by ProVA Support Network."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0f0f0f;
+    --card: #111111;
+    --card2: #161616;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-dim: #7a6530;
+    --gold-pale: rgba(201,168,76,0.08);
+    --white: #f5f0e8;
+    --muted: #9a8870;
+    --line: rgba(201,168,76,0.15);
+    --line2: rgba(201,168,76,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 48px; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+  .nav-brand { display: flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+  .nav-logo { height: 40px; width: auto; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold) !important; color: var(--black) !important; padding: 10px 24px !important; font-weight: 700 !important; }
+  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 80px; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 30%, #1a1204 0%, #080808 60%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,0.03) 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,0.03) 80px); }
+  .hero-inner { max-width: 860px; position: relative; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 8vw, 96px); font-weight: 900; line-height: 1.0; color: var(--white); margin-bottom: 12px; opacity: 0; animation: fadeUp 0.8s 0.35s forwards; }
+  .hero-title em { color: var(--gold); font-style: italic; }
+  .hero-divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 28px auto; opacity: 0; animation: fadeIn 1s 0.5s forwards; }
+  .hero-sub { font-size: clamp(18px, 3vw, 24px); font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 620px; margin: 0 auto 48px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.65s forwards; }
+  .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--gold), #a07828); color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; transition: transform 0.2s, opacity 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-secondary { display: inline-block; border: 1px solid var(--gold-dim); color: var(--gold); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; transition: background 0.2s; }
+  .btn-secondary:hover { background: rgba(201,168,76,0.08); }
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 40px 24px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .section { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+  .section-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--white); margin-bottom: 16px; }
+  .section-title em { color: var(--gold); font-style: italic; }
+  .section-rule { width: 60px; height: 2px; background: var(--gold); margin-bottom: 60px; }
+  .section-sub { font-size: 20px; font-weight: 300; color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 60px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-bottom: 80px; }
+  .service-card { background: var(--card); padding: 48px 40px; border-left: 3px solid transparent; transition: border-color 0.3s, background 0.3s; position: relative; overflow: hidden; }
+  .service-card:hover { border-left-color: var(--gold); background: var(--card2); }
+  .service-icon { font-size: 32px; margin-bottom: 20px; }
+  .service-badge { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 2px; color: var(--black); background: var(--gold); padding: 4px 10px; margin-bottom: 12px; text-transform: uppercase; }
+  .service-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .service-desc { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+  .service-features { list-style: none; margin-bottom: 28px; }
+  .service-features li { font-family: 'Montserrat', sans-serif; font-size: 12px; color: var(--muted); padding: 8px 0; border-bottom: 1px solid var(--line2); display: flex; gap: 12px; align-items: center; }
+  .service-features li::before { content: '✦'; color: var(--gold); font-size: 7px; flex-shrink: 0; }
+  .service-price { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold-light); font-style: italic; }
+  .pricing-section { background: var(--deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 100px 0; }
+  .pricing-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  .pricing-tabs { display: flex; gap: 2px; margin-bottom: 60px; flex-wrap: wrap; }
+  .pricing-tab { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; cursor: pointer; background: var(--card); color: var(--muted); border: none; transition: all 0.3s; }
+  .pricing-tab.active { background: var(--gold); color: var(--black); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .price-card { background: var(--card); padding: 40px 32px; position: relative; }
+  .price-card.featured { background: linear-gradient(135deg, #1c1506, #0f0f0f); border: 1px solid var(--gold-dim); }
+  .price-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 2px; padding: 5px 16px; white-space: nowrap; }
+  .price-tier { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .price-amount { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 4px; }
+  .price-amount span { font-size: 20px; color: var(--gold); vertical-align: super; font-style: italic; }
+  .price-period { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--muted); margin-bottom: 28px; }
+  .price-features-list { list-style: none; margin-bottom: 32px; }
+  .price-features-list li { font-family: 'Montserrat', sans-serif; font-size: 12px; color: var(--muted); padding: 10px 0; border-bottom: 1px solid var(--line2); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+  .price-features-list li::before { content: '✦'; color: var(--gold); font-size: 7px; flex-shrink: 0; margin-top: 3px; }
+  .btn-price { display: block; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 14px; text-decoration: none; transition: all 0.3s; }
+  .btn-price-outline { border: 1px solid var(--gold-dim); color: var(--gold); }
+  .btn-price-fill { background: linear-gradient(135deg, var(--gold), #a07828); color: var(--black); }
+  .bundle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+  .bundle-card { background: var(--card); padding: 36px 28px; border-top: 3px solid var(--gold-dim); }
+  .bundle-card.featured { border-top-color: var(--gold); background: var(--card2); }
+  .bundle-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .bundle-price { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--gold); margin-bottom: 4px; }
+  .bundle-save { font-family: 'Montserrat', sans-serif; font-size: 10px; color: var(--gold-dim); letter-spacing: 1px; margin-bottom: 20px; }
+  .bundle-includes { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .process-step { background: var(--card); padding: 40px 28px; text-align: center; }
+  .process-num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: 16px; }
+  .process-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 12px; }
+  .process-desc { font-family: 'Montserrat', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
+  .about-img { aspect-ratio: 1; overflow: hidden; border: 3px solid var(--gold-dim); }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .about-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .about-title-tag { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; }
+  .about-bio { font-size: 19px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; font-weight: 300; }
+  .about-skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1px; color: var(--gold); border: 1px solid var(--gold-dim); padding: 6px 14px; }
+  .testimonials-section { background: linear-gradient(135deg, #120f03, #0a0a0a); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 100px 0; }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .testimonial-card { background: var(--card); padding: 40px 32px; }
+  .testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 4px; margin-bottom: 20px; }
+  .testimonial-text { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--white); line-height: 1.6; margin-bottom: 24px; }
+  .testimonial-author { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+  .testimonial-role { font-family: 'Montserrat', sans-serif; font-size: 10px; color: var(--muted); margin-top: 4px; }
+  .cta-section { padding: 120px 40px; text-align: center; background: radial-gradient(ellipse at 50% 0%, #1e1609 0%, #080808 60%); }
+  .cta-inner { max-width: 700px; margin: 0 auto; }
+  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 64px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+  .cta-title em { color: var(--gold); font-style: italic; }
+  .cta-sub { font-size: 20px; color: var(--muted); margin-bottom: 48px; line-height: 1.7; font-weight: 300; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .cta-contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 600px; margin: 0 auto; }
+  .contact-card { background: var(--card); padding: 24px; text-align: center; text-decoration: none; transition: background 0.3s; }
+  .contact-card:hover { background: var(--card2); }
+  .contact-icon { font-size: 24px; margin-bottom: 8px; }
+  .contact-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  .contact-value { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-brand { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 3px; color: var(--gold-dim); text-transform: uppercase; }
+  .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--muted); font-style: italic; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 2px; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--gold); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .bundle-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-img { max-width: 200px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-contact-grid { grid-template-columns: 1fr; }
+    .section { padding: 60px 24px; }
+    footer { flex-direction: column; text-align: center; padding: 40px 24px; }
+  }
+  .pricing-content { display: none; }
+  .pricing-content.active { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <img src="logo.jpg" alt="ProVA Support Network" class="nav-logo"/>
+    ProVA Support Network
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Work With Us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div style="display:flex;align-items:center;gap:12px;border:none;padding:0;margin-bottom:40px;justify-content:center;">
+      <img src="logo.jpg" style="height:60px;width:auto;" alt="ProVA Support Network"/>
+    </div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:8px 20px;margin-bottom:40px;display:inline-block;">Professional Virtual Assistance Services</div>
+    <h1 class="hero-title">We Handle <em>Your Tasks.</em><br/>You Drive <em>Your Growth.</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">ProVA Support Network provides world-class virtual assistance, social media management, and digital product creation services — so you can focus on what matters most.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">View Our Packages</a>
+      <a href="#contact" class="btn-secondary">Get a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Services Offered</div></div>
+  <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Tools Mastered</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Client Focused</div></div>
+</div>
+
+<section id="services" class="section">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Our <em>Services</em></h2>
+  <div class="section-rule"></div>
+  <p class="section-sub">From social media management to complete digital product creation — we provide end-to-end support for your business.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Social Media Management</div>
+      <p class="service-desc">We manage your entire social media presence — strategy, content, scheduling, engagement and analytics — so your brand stays active and grows consistently.</p>
+      <ul class="service-features">
+        <li>Content calendar creation</li>
+        <li>Post design and copywriting</li>
+        <li>Scheduling and publishing</li>
+        <li>Community management</li>
+        <li>Monthly performance reports</li>
+      </ul>
+      <div class="service-price">From ₦35,000/month</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🗂️</div>
+      <div class="service-name">Virtual Assistance</div>
+      <p class="service-desc">We handle your admin tasks, inbox management, scheduling, research and more — giving you back hours every week to focus on growing your business.</p>
+      <ul class="service-features">
+        <li>Email and inbox management</li>
+        <li>Calendar and scheduling</li>
+        <li>Research and data entry</li>
+        <li>Document preparation</li>
+        <li>Customer follow-ups</li>
+      </ul>
+      <div class="service-price">From ₦25,000/month</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✍️</div>
+      <div class="service-name">Digital Content Creation</div>
+      <p class="service-desc">From graphics to videos to written content — we create scroll-stopping digital content that communicates your brand message and drives action.</p>
+      <ul class="service-features">
+        <li>Branded graphics (Canva)</li>
+        <li>Short-form video editing</li>
+        <li>Blog and caption writing</li>
+        <li>Lead magnet design</li>
+        <li>Brand kit creation</li>
+      </ul>
+      <div class="service-price">From ₦20,000/project</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📖</div>
+      <div class="service-name">Ebook Creation & Store Setup</div>
+      <p class="service-desc">We write, design and publish your ebook — then set up your Selar or Shopify store so you can start earning digital income immediately.</p>
+      <ul class="service-features">
+        <li>Ebook writing and design</li>
+        <li>Cover design</li>
+        <li>Selar store setup</li>
+        <li>Shopify store setup</li>
+        <li>Launch strategy</li>
+      </ul>
+      <div class="service-price">From ₦50,000/project</div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="pricing-inner">
+    <div class="section-label">Transparent Pricing</div>
+    <h2 class="section-title">Choose Your <em>Package</em></h2>
+    <div class="section-rule"></div>
+    <div class="pricing-tabs">
+      <button class="pricing-tab active" onclick="showPricing('smm')">Social Media</button>
+      <button class="pricing-tab" onclick="showPricing('va')">Virtual Assistance</button>
+      <button class="pricing-tab" onclick="showPricing('content')">Content Creation</button>
+      <button class="pricing-tab" onclick="showPricing('ebook')">Ebook & Store</button>
+      <button class="pricing-tab" onclick="showPricing('store')">Store Setup</button>
+    </div>
+    <div id="pricing-smm" class="pricing-content active">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Starter Package</div>
+          <div class="price-amount"><span>₦</span>35,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>3 platforms managed</li>
+            <li>12 posts per month</li>
+            <li>Basic graphics</li>
+            <li>Monthly report</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Growth Package</div>
+          <div class="price-amount"><span>₦</span>65,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>4 platforms managed</li>
+            <li>20 posts per month</li>
+            <li>Professional graphics</li>
+            <li>Engagement management</li>
+            <li>Bi-weekly reports</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Premium Package</div>
+          <div class="price-amount"><span>₦</span>100,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>5 platforms managed</li>
+            <li>30 posts per month</li>
+            <li>Premium graphics + video</li>
+            <li>Full community management</li>
+            <li>Weekly strategy calls</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div id="pricing-va" class="pricing-content">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Basic VA</div>
+          <div class="price-amount"><span>₦</span>25,000</div>
+          <div class="price-period">per month · 10 hrs/week</div>
+          <ul class="price-features-list">
+            <li>Email management</li>
+            <li>Basic scheduling</li>
+            <li>Data entry</li>
+            <li>Research tasks</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Standard VA</div>
+          <div class="price-amount"><span>₦</span>45,000</div>
+          <div class="price-period">per month · 20 hrs/week</div>
+          <ul class="price-features-list">
+            <li>Full inbox management</li>
+            <li>Calendar management</li>
+            <li>Customer follow-ups</li>
+            <li>Document preparation</li>
+            <li>Project coordination</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Executive VA</div>
+          <div class="price-amount"><span>₦</span>75,000</div>
+          <div class="price-period">per month · full time</div>
+          <ul class="price-features-list">
+            <li>Dedicated support</li>
+            <li>All standard VA tasks</li>
+            <li>Meeting coordination</li>
+            <li>Travel arrangements</li>
+            <li>Strategic admin support</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div id="pricing-content" class="pricing-content">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Basic Content</div>
+          <div class="price-amount"><span>₦</span>20,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>8 branded graphics</li>
+            <li>4 captions written</li>
+            <li>1 lead magnet design</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Standard Content</div>
+          <div class="price-amount"><span>₦</span>40,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>16 branded graphics</li>
+            <li>8 captions written</li>
+            <li>2 short videos edited</li>
+            <li>Brand kit included</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Premium Content</div>
+          <div class="price-amount"><span>₦</span>70,000</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features-list">
+            <li>Unlimited graphics</li>
+            <li>Full copywriting</li>
+            <li>4 videos edited</li>
+            <li>Blog posts included</li>
+            <li>Full brand management</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div id="pricing-ebook" class="pricing-content">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Basic Package</div>
+          <div class="price-amount"><span>₦</span>50,000</div>
+          <div class="price-period">one-time · delivery in 5 days</div>
+          <ul class="price-features-list">
+            <li>Content writing up to 20 pages</li>
+            <li>Basic ebook design</li>
+            <li>Cover design</li>
+            <li>Selar setup</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Standard Package</div>
+          <div class="price-amount"><span>₦</span>85,000</div>
+          <div class="price-period">one-time · delivery in 7 days</div>
+          <ul class="price-features-list">
+            <li>Content writing up to 40 pages</li>
+            <li>Professional ebook design</li>
+            <li>Cover design</li>
+            <li>Landing page creation</li>
+            <li>Selar + Shopify setup</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Premium Package</div>
+          <div class="price-amount"><span>₦</span>150,000</div>
+          <div class="price-period">one-time · delivery in 10 days</div>
+          <ul class="price-features-list">
+            <li>Content writing up to 60 pages</li>
+            <li>Professional ebook design</li>
+            <li>Cover design</li>
+            <li>Full landing page</li>
+            <li>Selar + Shopify setup</li>
+            <li>Social media launch kit</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div id="pricing-store" class="pricing-content">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Selar Setup</div>
+          <div class="price-amount"><span>₦</span>15,000</div>
+          <div class="price-period">one-time · delivery in 2 days</div>
+          <ul class="price-features-list">
+            <li>Complete Selar store setup</li>
+            <li>1 product listing</li>
+            <li>Payment setup</li>
+            <li>Brand customization</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Shopify Setup</div>
+          <div class="price-amount"><span>₦</span>35,000</div>
+          <div class="price-period">one-time · delivery in 3 days</div>
+          <ul class="price-features-list">
+            <li>Complete Shopify setup</li>
+            <li>Up to 3 product listings</li>
+            <li>Theme customization</li>
+            <li>Payment gateway setup</li>
+            <li>Mobile optimization</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Full Store Package</div>
+          <div class="price-amount"><span>₦</span>50,000</div>
+          <div class="price-period">one-time · delivery in 5 days</div>
+          <ul class="price-features-list">
+            <li>Selar + Shopify setup</li>
+            <li>Up to 5 product listings</li>
+            <li>Full branding</li>
+            <li>Payment setup on both</li>
+            <li>Launch strategy included</li>
+          </ul>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 80px;">
+      <div class="section-label" style="margin-bottom: 16px;">Save More</div>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 36px; color: var(--white); margin-bottom: 40px;">Bundle <em style="color: var(--gold); font-style: italic;">Packages</em></h3>
+      <div class="bundle-grid">
+        <div class="bundle-card">
+          <div class="bundle-name">Starter Business</div>
+          <div class="bundle-price">₦75,000<span style="font-size: 16px; color: var(--muted); font-family: 'Montserrat', sans-serif;">/month</span></div>
+          <div class="bundle-save">SAVE ₦5,000</div>
+          <div class="bundle-includes">✦ Social Media Starter<br/>✦ Basic VA<br/>✦ Basic Content Creation</div>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+        <div class="bundle-card featured">
+          <div class="bundle-name">Growth Business</div>
+          <div class="bundle-price">₦140,000<span style="font-size: 16px; color: var(--muted); font-family: 'Montserrat', sans-serif;">/month</span></div>
+          <div class="bundle-save">SAVE ₦15,000</div>
+          <div class="bundle-includes">✦ Social Media Growth<br/>✦ Standard VA<br/>✦ Standard Content Creation</div>
+          <a href="#contact" class="btn-price btn-price-fill">Get Started</a>
+        </div>
+        <div class="bundle-card">
+          <div class="bundle-name">Full Business</div>
+          <div class="bundle-price">₦220,000<span style="font-size: 16px; color: var(--muted); font-family: 'Montserrat', sans-serif;">/month</span></div>
+          <div class="bundle-save">SAVE ₦30,000</div>
+          <div class="bundle-includes">✦ Social Media Premium<br/>✦ Executive VA<br/>✦ Premium Content Creation</div>
+          <a href="#contact" class="btn-price btn-price-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Our <em>Process</em></h2>
+  <div class="section-rule"></div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-title">Free Consultation</div>
+      <p class="process-desc">We start with a free 30-minute call to understand your business, goals and challenges.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-title">Custom Proposal</div>
+      <p class="process-desc">We send you a tailored service proposal with clear deliverables, timelines and pricing.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-title">Agreement & Kickoff</div>
+      <p class="process-desc">We sign a simple service agreement, collect a 50% deposit and begin work immediately.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-title">Deliver & Grow</div>
+      <p class="process-desc">We deliver exceptional results on time, every time — and grow with your business long term.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section" style="border-top: 1px solid var(--line);">
+  <div class="about-grid">
+    <div>
+      <div class="about-img">
+        <img src="gloria-headshot.jpg" alt="Gloria Chinanu Chinwi" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+    </div>
+    <div>
+      <div class="section-label">About the Founder</div>
+      <div class="about-name">Gloria Chinanu Chinwi</div>
+      <div class="about-title-tag">Virtual Assistant · Social Media Specialist · Founder</div>
+      <p class="about-bio">Gloria is a professional Virtual Assistant and Social Media Marketing Specialist with hands-on experience across multiple organizations including VSE Africa, Garm's De Novo and Epochfolio. Through ProVA Support Network, she helps small business owners streamline their operations, grow their online presence and build sustainable digital income.</p>
+      <p class="about-bio">Gloria is also the author of <em>"From Zero to VA: A Nigerian's Guide to Virtual Assistance"</em> — a practical guide for Nigerians ready to build thriving remote careers.</p>
+      <div class="about-skills">
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">HubSpot</span>
+        <span class="skill-tag">Trello</span>
+        <span class="skill-tag">Asana</span>
+        <span class="skill-tag">Notion</span>
+        <span class="skill-tag">Slack</span>
+        <span class="skill-tag">Calendly</span>
+        <span class="skill-tag">Metricool</span>
+        <span class="skill-tag">Google Workspace</span>
+        <span class="skill-tag">Selar</span>
+        <span class="skill-tag">Shopify</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="section-label">Social Proof</div>
+    <h2 class="section-title">What <em>Clients Say</em></h2>
+    <div class="section-rule"></div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Gloria transformed our social media presence completely. Our engagement tripled within 60 days and we started getting inbound leads we never had before."</p>
+        <div class="testimonial-author">Business Owner</div>
+        <div class="testimonial-role">Rivers State, Nigeria</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I finally have my inbox under control. Gloria handles everything professionally and proactively. I don't know how I managed without a VA before."</p>
+        <div class="testimonial-author">Entrepreneur</div>
+        <div class="testimonial-role">Lagos, Nigeria</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"She built and launched my entire ebook in days. The design was stunning, the content was excellent and my Selar store was set up perfectly. Worth every naira."</p>
+        <div class="testimonial-author">Digital Creator</div>
+        <div class="testimonial-role">Abuja, Nigeria</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section">
+  <div class="cta-inner">
+    <div class="section-label" style="margin-bottom: 20px;">Ready to Get Started?</div>
+    <h2 class="cta-title">Let's Build Something <em>Great</em> Together</h2>
+    <p class="cta-sub">Book a free 30-minute consultation and let's discuss exactly how ProVA Support Network can help your business grow.</p>
+    <div class="cta-buttons">
+      <a href="mailto:provasupportnetwork@gmail.com" class="btn-primary">Book Free Consultation</a>
+      <a href="https://wa.me/2348065408000" class="btn-secondary">WhatsApp Us</a>
+    </div>
+    <div class="cta-contact-grid">
+      <a href="mailto:provasupportnetwork@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">provasupportnetwork@gmail.com</div>
+      </a>
+      <a href="https://wa.me/2348065408000" class="contact-card">
+        <div class="contact-icon">💬</div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">08065408000</div>
+      </a>
+      <a href="https://linkedin.com/in/gloria-chinwi" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">gloria-chinwi</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
+    <img src="logo.jpg" style="height:36px;width:auto;" alt="ProVA"/>
+    © 2025 ProVA Support Network · Gloria Chinanu Chinwi
+  </div>
+  <div class="footer-tagline">Supporting Brands · Streamlining Tasks · Driving Growth</div>
+  <div class="footer-links">
+    <a href="https://waltergloria001-glitch.github.io/ProVA.Ebook">Ebook</a>
+    <a href="https://selar.com/13m79de6g8">Buy Ebook</a>
+    <a href="https://linkedin.com/in/gloria-chinwi">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+function showPricing(tab) {
+  document.querySelectorAll('.pricing-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.pricing-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('pricing-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
